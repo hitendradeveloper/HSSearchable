@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  HSSearchable
 //
-//  Created by SOTSYS216 on 28/08/17.
+//  Created by Hitendra iDev on 28/08/17.
 //  Copyright © 2017 Hitendra iDev. All rights reserved.
 //
 

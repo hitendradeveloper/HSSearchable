@@ -1,7 +1,7 @@
 # HSSearchable
 Easiest way to search from UITableView using UISearchBar in minimum line of code in UIViewController
 
-[HSSearchable](https://github.com/hitendradeveloper/HSSearchable/blob/master/giphy.gif)
+![HSSearchable](https://github.com/hitendradeveloper/HSSearchable/blob/master/giphy.gif)
 
 ##
 

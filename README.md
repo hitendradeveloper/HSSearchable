@@ -4,7 +4,7 @@ Easiest way to search from UITableView using UISearchBar in minimum line of code
 ![HSSearchable](https://github.com/hitendradeveloper/HSSearchable/blob/master/giphy.gif)
 
 ## How to integreat source?
-1. Directly drag and drop the HSSearchable.swift into your project source file
+1. Directly drag and drop the HSSearchable.swift into your xcode project.
 
 2. Most recommanded: install via cocoapods ([How to use cocoapods](https://guides.cocoapods.org/using/getting-started.html "more info"))
 

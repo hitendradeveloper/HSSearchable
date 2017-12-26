@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F730C34B1F5565F100310EAD /* HSSearchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AC5C731F53D112006A7804 /* HSSearchable.swift */; };
 		F7AC5C611F53D0FD006A7804 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AC5C601F53D0FD006A7804 /* AppDelegate.swift */; };
 		F7AC5C661F53D0FE006A7804 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7AC5C641F53D0FE006A7804 /* Main.storyboard */; };
 		F7AC5C681F53D0FE006A7804 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7AC5C671F53D0FE006A7804 /* Assets.xcassets */; };
 		F7AC5C6B1F53D0FE006A7804 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7AC5C691F53D0FE006A7804 /* LaunchScreen.storyboard */; };
-		F7AC5C741F53D112006A7804 /* HSSearchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AC5C731F53D112006A7804 /* HSSearchable.swift */; };
 		F7AC5C761F53D183006A7804 /* HSSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AC5C751F53D183006A7804 /* HSSearchTableViewController.swift */; };
 		F7AC5C781F53D2C6006A7804 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AC5C771F53D2C6006A7804 /* UserTableViewCell.swift */; };
 		F7AC5C7A1F53D3D4006A7804 /* UserDM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AC5C791F53D3D4006A7804 /* UserDM.swift */; };
@@ -155,9 +155,9 @@
 			files = (
 				F7AC5C781F53D2C6006A7804 /* UserTableViewCell.swift in Sources */,
 				F7AC5C7A1F53D3D4006A7804 /* UserDM.swift in Sources */,
-				F7AC5C741F53D112006A7804 /* HSSearchable.swift in Sources */,
 				F7AC5C611F53D0FD006A7804 /* AppDelegate.swift in Sources */,
 				F7AC5C761F53D183006A7804 /* HSSearchTableViewController.swift in Sources */,
+				F730C34B1F5565F100310EAD /* HSSearchable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,6 +319,7 @@
 				F7AC5C711F53D0FE006A7804 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

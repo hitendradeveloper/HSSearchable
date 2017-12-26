@@ -63,6 +63,13 @@ class SearchableWrapper: NSObject ,Searchable {
     
 }
 
+//MARK:- UISearchResultsUpdating
+extension SearchableWrapper: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        self.search(phrase: searchController.searchBar.text ?? "")
+    }
+}
+
 //MARK:- UISearchBarDelegate
 extension SearchableWrapper: UISearchBarDelegate{
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
@@ -71,6 +78,13 @@ extension SearchableWrapper: UISearchBarDelegate{
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.search(phrase: searchText)
+    }
+}
+
+//MARK:- Helper
+extension SearchableWrapper {
+    func search(phrase searchText: String){
         self.isSearching = searchText.characters.count > 0
         self.searchedArray = self.serverArray.filter({( modelObject : SearchableData) -> Bool in
             let range = modelObject.searchValue.range(of: searchText, options: .caseInsensitive)

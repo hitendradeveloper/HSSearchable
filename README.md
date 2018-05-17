@@ -15,7 +15,7 @@ Easiest way to search from UITableView using UISearchBar in minimum line of code
 ## How to use in code ? Just follow the simple steps :)
 
 	struct UserDM {
-    	var name: String
+    	    var name: String
 	    var city: String
 	}
 

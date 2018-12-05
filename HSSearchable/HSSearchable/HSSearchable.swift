@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol SearchableData {
+public protocol SearchableData {
     /*
      @param: searchValue
      using this value from your dataModal, "searchedArray" will be generated
@@ -16,7 +16,7 @@ protocol SearchableData {
     var searchValue: String {get}
 }
 
-protocol Searchable {
+public protocol Searchable {
     
     /*
      @param: serverArray
@@ -45,47 +45,47 @@ protocol Searchable {
     var dataArray: [SearchableData]  {get}
 }
 
-typealias SearchingCallBack = (_ isSearching: Bool, _ searchText: String)->(Void)
+public typealias SearchingCallBack = (_ isSearching: Bool, _ searchText: String)->(Void)
 
 //MARK:- SearchableWrapper: Searchable
-class SearchableWrapper: NSObject ,Searchable {
+open class SearchableWrapper: NSObject ,Searchable {
+  
+  /*
+   @param: customDelegate
+   to support same access of UISearchBarDelegate
+   */
+    open var customDelegate: UISearchBarDelegate?
     
-    var serverArray: [SearchableData]  = []
-    var searchedArray: [SearchableData]  = []
+    open var serverArray: [SearchableData]  = []
+    open var searchedArray: [SearchableData]  = []
     
-    var isSearching: Bool = false
-    var dataArray: [SearchableData]  {
+    open var isSearching: Bool = false
+    open var dataArray: [SearchableData]  {
         return isSearching ? self.searchedArray : self.serverArray
     }
     
     //call back when requied
-    var searchingCallBack: SearchingCallBack?
+    open var searchingCallBack: SearchingCallBack?
     
-}
-
-//MARK:- UISearchResultsUpdating
-extension SearchableWrapper: UISearchResultsUpdating {
-    func updateSearchResults(for searchController: UISearchController) {
-        self.search(phrase: searchController.searchBar.text ?? "")
-    }
 }
 
 //MARK:- UISearchBarDelegate
 extension SearchableWrapper: UISearchBarDelegate{
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+    open func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         self.isSearching = false
         self.searchingCallBack?(self.isSearching, "")
+        self.customDelegate?.searchBarCancelButtonClicked?(searchBar)
     }
     
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        self.search(phrase: searchText)
+    open func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        self.customDelegate?.searchBarSearchButtonClicked?(searchBar)
     }
-}
-
-//MARK:- Helper
-extension SearchableWrapper {
-    func search(phrase searchText: String){
-        self.isSearching = searchText.characters.count > 0
+    open func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        self.customDelegate?.searchBarTextDidBeginEditing?(searchBar)
+    }
+    
+    open func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.isSearching = searchText.count > 0
         self.searchedArray = self.serverArray.filter({( modelObject : SearchableData) -> Bool in
             let range = modelObject.searchValue.range(of: searchText, options: .caseInsensitive)
             return !((range?.isEmpty) ?? true)

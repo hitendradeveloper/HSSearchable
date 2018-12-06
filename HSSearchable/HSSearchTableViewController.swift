@@ -17,18 +17,15 @@ class HSSearchTableViewController: UITableViewController {
     }
     
     //MARK: IBOutlet
-    let searchController = UISearchController(searchResultsController: nil)
     @IBOutlet weak var searchbar: UISearchBar!
     
     //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.setupSearchController()
-        
+      
         //set anyone delegate of two based on your requiredments
-        self.searchController.searchBar.delegate = nil
-        searchController.searchResultsUpdater = self.usersData
+        self.searchbar.delegate = self.usersData
+        tableView.tableHeaderView = self.searchbar
         
         self.usersData.searchingCallBack = { isSearching, searchText in
             print("searching Text:= \(searchText)")
@@ -58,15 +55,6 @@ class HSSearchTableViewController: UITableViewController {
         //In most of the cases, this data will come from the server side
         self.usersData.serverArray = array;
         self.tableView.reloadData()
-    }
-    
-    func setupSearchController() {
-        definesPresentationContext = true
-        searchController.dimsBackgroundDuringPresentation = true
-        searchController.searchBar.barTintColor = UIColor(white: 0.9, alpha: 0.9)
-        searchController.searchBar.placeholder = "Search by name or city"
-        searchController.hidesNavigationBarDuringPresentation = true
-        tableView.tableHeaderView = searchController.searchBar
     }
 }
 

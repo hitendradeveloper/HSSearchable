@@ -13,11 +13,13 @@ Easiest way to search from UITableView using UISearchBar in minimum line of code
        
 
 ## How to use in code ? Just follow the simple steps :)
-
-	struct UserDM {
-    	var name: String
-	    var city: String
-	}
+    import HSSearchable
+    
+    //Suppose this is your datamodel
+    struct UserDM {
+      var name: String
+      var city: String
+     }
 
 1. extend your class or Structure using the SearchableData delegate
 
@@ -52,6 +54,7 @@ Easiest way to search from UITableView using UISearchBar in minimum line of code
 4. Set the local array or load data from the server usign API|Webservice call
 
         func loadDummyData(){
+              //This is just an example data
               let user1 = UserDM(name: "Hitendra Solanki", city: "Ahmedabad")
               let user2 = UserDM(name: "Justina Flores", city: "Arizona")
               let user3 = UserDM(name: "Lisa Minick", city: "Casper")
@@ -71,6 +74,8 @@ Easiest way to search from UITableView using UISearchBar in minimum line of code
               self.tableView.reloadData()
         }
 
+# It's Done
+![It's Done](https://github.com/hitendradeveloper/HSSearchable/blob/master/2ah3x6.jpg)
 
 ##
 

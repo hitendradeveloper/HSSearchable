@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import HSSearchable
 
 class HSSearchTableViewController: UITableViewController {
     
@@ -26,7 +27,8 @@ class HSSearchTableViewController: UITableViewController {
         //set anyone delegate of two based on your requiredments
         self.searchbar.delegate = self.usersData
         tableView.tableHeaderView = self.searchbar
-        
+        //self.usersData.customDelegate = self;
+      
         self.usersData.searchingCallBack = { isSearching, searchText in
             print("searching Text:= \(searchText)")
             self.tableView.reloadData()
@@ -77,3 +79,10 @@ extension HSSearchTableViewController {
         return cell
     }
 }
+
+//
+//extension HSSearchTableViewController: UISearchBarDelegate {
+////  func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+////    return true
+////  }
+//}

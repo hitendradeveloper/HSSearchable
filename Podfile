@@ -6,6 +6,6 @@ target 'HSSearchableDemo' do
   use_frameworks!
 
   # Pods for HSSearchableDemo
-	pod 'HSSearchable'
+  pod 'HSSearchable'
 
 end

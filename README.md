@@ -73,7 +73,13 @@ Easiest way to search from UITableView using UISearchBar in minimum line of code
               self.usersData.serverArray = array;
               self.tableView.reloadData()
         }
+	
+5. Optional Setps: 
+HSSearchable also supports the optional customDelegate, using this you can handle default  UISearchabarDelegate methods in your own viewControllers.
 
+          self.usersData.customDelegate = self //implement UISearchbarDelegate in your class       
+
+	
 # It's Done
 ![It's Done](https://github.com/hitendradeveloper/HSSearchable/blob/master/2ah3x6.jpg)
 
